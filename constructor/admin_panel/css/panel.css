@@ -1,0 +1,219 @@
+/* Основа */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    transition: all .5s ease-in-out;
+
+    font-family: Montserrat;
+    font-style: normal;
+}
+
+/* Меню */
+.menu
+{
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
+}
+
+.menu .nav
+{
+    padding: 0.5%;
+    max-width: 1800px;
+    width: auto;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+}
+
+.menu a
+{
+    margin: 10px;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+}
+
+.nav a:nth-child(1)
+{
+    background-image: url(../image/panel.png);
+}
+.nav a:nth-child(2)
+{
+    background-image: url(../image/content.png);
+}
+.nav a:nth-child(3)
+{
+    background-image: url(../image/database.png);
+}
+.nav a:nth-child(4)
+{
+    background-image: url(../image/setting.png);
+}
+
+.nav a:nth-child(1):hover
+{
+    background-image: url(../image/panelActive.png);
+}
+.nav a:nth-child(2):hover
+{
+    background-image: url(../image/contentActive.png);
+}
+.nav a:nth-child(3):hover
+{
+    background-image: url(../image/databaseActive.png);
+}
+.nav a:nth-child(4):hover
+{
+    background-image: url(../image/settingActive.png);
+}
+
+/* Контент */
+
+.wrapper
+{
+    max-width: 1800px;
+    width: auto;
+    margin: 0 auto;
+    display: flex;
+}
+
+
+    /* Left-sizebar */
+    .ad-box
+    {
+        background-image: url("../image/people.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: auto;
+        margin-top: 20px;
+        padding: 10px;
+        max-width: 98%;
+        color: white;
+/* 
+        background: #5688B7;
+        border-radius: 5px; */
+    }
+    .create-button
+    {
+        text-align: center;
+        line-height: 30px;
+        font-size: 90%;
+        cursor: pointer;
+        
+    }
+    .create-button:hover
+    {
+        transform: scale(0.9);
+    }
+    .ad-box h2{
+        font-weight: bold;
+        font-size: 23px;
+        line-height: 29px;
+        margin-top: 8%;
+        padding-left: 1%;
+    }
+    .ad-box p{
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        padding-left: 1%;
+    }
+    .ad-box .create-button{
+        margin-top: 15px;
+        margin-bottom: 10px;
+        width: 111px;
+        height: 32px;
+        background-color:white;
+        border-radius: 5px;
+        color: black;
+        margin-left: 1%;
+    }
+
+    .left-sidebar
+    {
+        width: 50%;
+        padding-left: 5%;
+        margin-left: auto;
+    }
+
+    .ad-box img{
+        position: absolute;
+        top: 4.1%;
+        margin-left: 17%;
+    }
+
+    .page
+    {
+        max-width: 30%;
+        max-height: 11vh;
+        min-width: 49%;
+        min-height: 50px;
+        height: auto;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 17px rgb(0 0 0 / 25%);
+        border-radius: 5px;
+        padding-top: 30px;
+        text-align: center;
+        margin-bottom: 4%;
+    }
+
+    .items-box
+    {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-between;
+        width: 71%;
+    }
+
+    .left-wrapper{
+        width: 680px;
+    }
+
+    /* right-sidebar */
+    .right-sidebar
+    {
+        width: 50%;
+        margin-left: right;
+    }
+
+
+/* Адаптивность */
+/* @media (max-width: 1799px) {
+    .ad-box
+    {
+        max-width: 90%;
+    }
+    .ad-box h2{
+        margin-top: 6%;
+    }
+}
+
+@media (max-width: 1440px) {
+    .ad-box
+    {
+        max-width: 90%;
+    }
+    .ad-box h2{
+        margin-top: 6%;
+    }
+
+    .items-box{
+        width: 66%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .wrapper {
+        display: block;
+    }
+    .left-sidebar
+    {
+        width: auto;
+        margin-left: 0;
+    }
+} */
