@@ -247,7 +247,6 @@ input
 	background: #1B202D;
 	border-radius: 5px;
 	display: flex;
-	cursor: pointer;
 	margin-bottom: 15px;
 }
 
@@ -264,6 +263,7 @@ input
 }
 
 /* Modal-box */
+
 
 .modal-box
 {
