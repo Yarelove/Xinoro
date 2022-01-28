@@ -39,8 +39,16 @@
 							# openInEditor() - javascript(func) - Открытие страницы в редакторе
 
 							$editKey = "'".$value[1]."','".$value[2]."'";
-							echo '<div onclick="openInEditor('.$editKey.');" class="page">
-									<div class="url">'.$value[3].'</div></div>';
+							echo '<div class="page">
+									<div class="url">'.$value[3].'</div>
+									<div class="menu"><span onclick="showSubMenu(this);">...</span>
+										<div class="menu-open" value="false">
+											<ul>
+												<li onclick="openInEditor('.$editKey.');">Редактировать</li>
+											</ul>
+										</div>
+									</div>
+								  </div>';
 						}
 					?>
 				</div>
@@ -56,6 +64,38 @@
 					background: rgba(0, 0, 0, 0.3);;
 					width: 100%;
 					height: 100%;
+				}
+
+				.page .menu
+				{
+					position: absolute;
+					margin-left: 328px;
+					margin-top: -10px;
+
+					font-family: Montserrat;
+					font-style: normal;
+					font-weight: 500;
+					font-size: 24px;
+					line-height: 29px;
+
+					cursor: pointer;
+
+					color: #C6C6C6;
+				}
+
+				.menu .menu-open
+				{
+					position: absolute;
+					right: -5px;
+					top: 18px;
+					width: 120px;
+					height: 79px;
+
+					display: none;
+
+					background: #171C28;
+					box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
+					border-radius: 5px;
 				}
 
 				.box-add
@@ -89,6 +129,11 @@
 	let inputAction = document.getElementById("action");
 	let inputTitle = document.getElementById("title_page");
 	pageControll.hidden = true;
+
+	function showSubMenu(object)
+	{
+		console.log(object.parent);
+	}
 
 	function openPageControll()
 	{
