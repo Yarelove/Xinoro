@@ -1,0 +1,73 @@
+.zaglav{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 5%;
+  width: auto;
+}
+.txt1-1{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: auto;
+}
+.txt1-2{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: auto;
+}
+.txt1-3{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: auto;
+}
+.seredina{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  width: auto;
+}
+.left{
+  background-color: #7777ff;
+  width: 40%;
+  height: 60vh;
+  margin-top: 3%;
+  margin-left: 5%;
+  border-radius: 15px;
+}
+.center{
+  background-color: #7777ff;
+  width: 40%;
+  height: 60vh;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 3%;
+  border-radius: 15px;
+}
+.right{
+  background-color: #7777ff;
+  width: 40%;
+  height: 60vh;
+  margin-left: 1%;
+  margin-top: 3%;
+  margin-right: 5%;
+  border-radius: 15px;
+}
+.center-pic1{
+  display:block;
+  margin:auto;
+}
+.center-pic2{
+  display:block;
+  margin:auto;
+}
+.center-pic3{
+  display:block;
+  margin:auto;
+}
+content{
+   display: flex;
+}
