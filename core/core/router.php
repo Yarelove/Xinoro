@@ -53,7 +53,7 @@
 		{
 			$page_controller = $controller."Controller";
 			$page_action = $action."Action";
-			echo "<base href='".$this->settings['base_url']."'>"; # Очень важно, глобальный маршрут подкючения стилей
+			//echo "<base href='".$this->settings['base_url']."'>"; # Очень важно, глобальный маршрут подкючения стилей
 			require_once("core/controllers/".$page_controller.".php");
 			$pageController = new $page_controller($controller, $action);
 			$pageController->$page_action();
