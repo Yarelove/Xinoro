@@ -35,14 +35,8 @@
 			foreach ($this->routes as $value) {
 				foreach($value as $url)
 				{ 
-					# 	URL - 0 (string)
-					# 	Controller - 1 (string)
-					# 	Action - 2 (string)
-					# 	Title - 3 (string) 
-					#   Hidden Page - 4 (boolean)
 					if($url[0] == $this->getPath())
 					{
-						// Проверяем включена ли страница
 						if(!$url[4])
 						{ 
 							echo "Страница была отключена"; 
@@ -51,7 +45,6 @@
 						$this->runPage($url[1],$url[2]);
 						break;
 					}
-					// else echo "404 page";
 				}
 			}
 		}	

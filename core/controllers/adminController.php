@@ -11,10 +11,21 @@
 	{
 		public function panelAction()
 		{
+			// Создание страницы
 			if(isset($_POST['createpage']))
-			{
 				$this->model->createPage($_POST["url"],$_POST["controller"],$_POST["action"],$_POST["title"]);
-			}
+
+			// Удаление страницы
+			if(isset($_POST['deletePage']))
+				$this->model->deletePage($_POST["selected_url"]);
+
+			// Включение/Отключение страницы
+			if(isset($_POST['pageDeactivation']))
+				$this->model->pageHidden($_POST["selected_url"],false);
+
+			if(isset($_POST['pageActivation']))
+				$this->model->pageHidden($_POST["selected_url"],true);
+
 			$this->view->LoadDesign();
 		}
 

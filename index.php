@@ -15,7 +15,4 @@
 	# create router and start xinoro
 	$router = new Router();
 
-	// var_dump($routes);
-	// echo '<pre>';
-
 ?>
