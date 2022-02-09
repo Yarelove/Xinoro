@@ -11,11 +11,10 @@
 	{
 		public function panelAction()
 		{
-			if(isset($_GET['createpage']))
+			if(isset($_POST['createpage']))
 			{
-				$this->model->createPage($_GET['u'],$_GET['c'],$_GET['a'],$_GET['t']);
+				$this->model->createPage($_POST["url"],$_POST["controller"],$_POST["action"],$_POST["title"]);
 			}
-
 			$this->view->LoadDesign();
 		}
 

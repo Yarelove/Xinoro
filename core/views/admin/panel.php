@@ -1,152 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta charset="UTF-8">
 	<base href="/Xinoro/">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="vendor/css/panel.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<!-- Bootstrap 5 -->
-    <!-- <link rel="stylesheet" href="vendor/assets/css/bootstrap.css">
-    <script src="vendor/assets/js/bootstrap.js"></script> -->
-    <title>Админ Панель</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="vendor/assets/Bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="vendor/css/xinoro_admin_panel.css">
+	<title>Editor</title>
 </head>
 <body>
-    <div class="menu">
-        <div class="nav">
-            <a href="admin/panel"></a>
-            <a href="admin/content"></a>
-            <a href="admin/database"></a>
-            <a href="admin/setting"></a>
-        </div>
-    </div>
-    <div class="content">
-        <div class="wrapper">
-            <div class="left-sidebar">
-                <div class="left-wrapper">
-                    <div class="info-box">
-                        <h2>Управление в 2 клика</h2>
-                        <p>Управление страницами стало удобнее,<br>создание страницы, ограничение прав<br>на просмотр в 2 клика.</p>
-                        <div id="createPageBtn" class="create-button">Создать</div>
-                    </div>
-                    <div class="items-box">
+	<div class="navigation container-fluid">
+		<div class="container p-2">
+			<nav>
+				<ul class="nav justify-content-center">
+				  <li class="nav-item">
+				    <a class="nav-link active" aria-current="page" href="#">Обложка</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="#">Контент</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="#">База</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="#">Настройки</a>
+				  </li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="container ms-100 me-100 mt-5">
+		<div class="row">
+			<div class="col-xxl-6 col-lg-12 d-flex justify-content-xxl-end justify-content-center">
+				<div class="wrapper-box">
+					<div class="info-box ps-3 pt-2">	
+						<img class="people-img" src="vendor/image/people.svg">
+						<p class="mb-1">Управление в 2 клика</p>
+						<p>Управление страницами стало удобнее,<br>
+						создание страницы, ограничение прав<br>
+						на просмотр в 2 клика.</p>
+						<button data-bs-toggle="modal" data-bs-target="#exampleModal">Создать</button>
+					</div>
+					<div class="item-box mt-3">
 						<?php
 							# Передача переменных из routes.json 
 							#
-							# URL - 0 (string)
-							# Controller - 1 (string)
-							# Action - 2 (string)
-							# Title - 3 (string) 
+							# 	URL - 0 (string)
+							# 	Controller - 1 (string)
+							# 	Action - 2 (string)
+							# 	Title - 3 (string) 
 							#
-							# openInEditor() - javascript(func) - Открытие страницы в редакторе
-							# pageInfo() - javascript(func) - Открытие информации о странице
+							# openInEditor() - javascript(local func) - Открытие страницы в редакторе
+							# showInfo() - javascript(local func) - Открытие информации о странице
 
 							# Получение списка путей
 							$pages = json_decode(file_get_contents("config/routes.json"),true);
 
-							# Подсчет количества страниц для n путей
-							$countPageBox = count($pages["routes"]);
-							$countPage = is_int($countPageBox/6) ? $countPageBox/6 : floor($countPageBox/6)+1;
-
 							# Вывод путей на страницы
-							for($i = 0; $i <= $countPage; $i++)
+							for($i = 0; $i < count($pages['routes']); $i++)
 							{
-								# Проверяем сколько элементов появится на странице
-								$countBoxInPage = $countPageBox >= 6 ? 6 : $countPageBox;
-
-								# Выводим страницы
-								if($countBoxInPage != 0)
-									echo '<div class="page-section" id="Slider-Page-'.$i.'">';
-
-								# Выводим элементы 
-								for($j = 0; $j < $countBoxInPage; $j++)
-								{
-									echo '<div onclick="showInfo('."'".$pages["routes"][$j][3]."'".', '."'".$pages["routes"][$j][0]."'".', '."'".$pages["routes"][$j][1]."'".', '."'".$pages["routes"][$j][2]."'".')" class="page">'.$pages["routes"][$j][3].'</div>';
-								}
-
-								# Отнимаем количество элементов которые уже вывели
-								$countPageBox -= $countBoxInPage;
-
-								if($countBoxInPage != 0)
-									echo '</div>';
+								echo '<div class="item" onclick="showInfo('."'".$pages["routes"][$i][3]."'".', '."'".$pages["routes"][$i][0]."'".', '."'".$pages["routes"][$i][1]."'".', '."'".$pages["routes"][$i][2]."'".')" class="page">'.$pages["routes"][$i][3].'</div>';
 							}
 						?>
-                    </div>
-                    <div class="button-box">
-                        <div id="Slider-left-btn" class="left-arrow"></div>
-                        <div id="Slider-right-btn" class="right-arrow"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="right-sidebar">
-				<form id="hideInfo"> <p class="Title">Страница не выбрана</p> </form>
-                <form id="showInfo" action="">
-					<p class="Title">Информация о странице</p>
-					<p>Ссылка</p>
-					<input id="url" type="text" readonly>
-					<p>Контроллер</p>
-					<input id="controller" type="text" readonly>
-					<p>Действие</p>
-					<input id="action" type="text" readonly>
-					<p>Заголовок</p>
-					<input id="title_" type="text" readonly>
-					<p>Режим отображения</p>
-					<div class="activity-btn-box">
-						<button>Не активно</button>
-						<button class="right">Активно</button>
 					</div>
-					<div class="tools-box">
-						<button>Редактировать</button>
-						<button class="right">Удалить</button>
+					<div class="arrow-flex justify-content-end">
+						<div class="left-arrow"></div>
+						<div class="right-arrow"></div>
 					</div>
-                </form>
+				</div>
 			</div>
-        </div>
-    </div>
-    <!-- delete -->
-    <br><br><br><br><br>
-	<input id="url__" type="text" placeholder="url">
-	<input id="controller__" type="text" placeholder="controller">
-	<input id="action__" type="text" placeholder="action">
-	<input id="title___" type="text" placeholder="title">
-	<button onclick="createPage();">Создать</button>
-	<!-- ------------- -->
-	<script type="text/javascript">
-
-		// Varables
-		let showInfoBox = document.getElementById("showInfo");
-		let hideInfoBox = document.getElementById("hideInfo");
-		let pageControll = document.getElementById("create-page-controll");
-		let inputUrl = document.getElementById("url__");
-		let inputController = document.getElementById("controller__");
-		let inputAction = document.getElementById("action__");
-		let inputTitle = document.getElementById("title___");
-		let sliderPageCount = <?php echo $countPage ?>;
-		let sliderSelectPage = 0;
-
-
-		// Create 
-		function createPage()
-		{
-			alert(inputUrl.value);
-			window.location.href = 'admin/panel?createpage&u='+inputUrl.value+'&c='+inputController.value+'&a='+inputAction.value+'&t='+inputTitle.value;
-		}
-		
-		// hidden
-		showInfoBox.hidden = true;
-		//pageControll.hidden = true;
-
-		// function`s
-		function showInfo(title, url, controller, action)
-		{
-			showInfoBox.hidden = false;
-			hideInfoBox.hidden = true;
-			document.getElementById("url").value = url;
-			document.getElementById("controller").value = controller;
-			document.getElementById("action").value = action;
-			document.getElementById("title_").value = title;
-		}
-	</script>
+			<div class="col-xxl-6 col-lg-12 d-flex justify-content-xxl-start justify-content-center">
+				<div class="writer-box">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Создание страницы</h5>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	        <div class="container-fluid">
+			    <div class="row">
+			    	<div class="col-12">
+			    		<form action="admin/panel" method="POST">
+				    		<p>Ссылка</p>
+				    		<input class="inputed" type="text" name="url" placeholder="example/panel" required>
+				    		<p>Контроллер</p>
+				    		<input class="inputed" type="text" name="controller" placeholder="example" required>
+				    		<p>Действие</p>
+				    		<input class="inputed" type="text" name="action" placeholder="example" required>
+				    		<p>Заголовок</p>
+				    		<input class="inputed" type="text" name="title" placeholder="Example Test" required>
+					        <input class="btn btn-primary" type="submit" name="createpage" value="Создать">
+			    		</form>
+			    	</div>
+			    </div>
+			</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 </body>
 </html>
+<script type="text/javascript" src="vendor/assets/Bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="vendor/js/xinoro_admin_panel.js"></script>
