@@ -1,21 +1,19 @@
 <?php 
-	function generatePage()
+	function generatePageHeader($base_url)
 	{
 		echo '
 			<!DOCTYPE html>
 			<html lang="en">
 			<head>
 				<!-- Base setting -->
-				<base href="/Xinoro/">
-			    <meta charset="UTF-8">
-			    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-			    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-			    <link rel="stylesheet" href="vendor/css/panel.css">
-			    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+				<base href='.$base_url.'>
 				<!-- Bootstrap 5 -->
-			    <!-- <link rel="stylesheet" href="vendor/assets/css/bootstrap.css">
-			    <script src="vendor/assets/js/bootstrap.js"></script> -->
-			    <title>Админ Панель</title>
+			    <link rel="stylesheet" type="text/css" href="vendor/assets/Bootstrap/css/bootstrap.css">
+			    <script type="text/javascript" src="vendor/assets/Bootstrap/js/bootstrap.js"></script>
+			    <!-- jquery 3.6.0 -->
+			    <script src="vendor/assets/Jquery/jquery-3.6.0.min.js"></script>
+			    <!-- Custom setting -->
+
 			</head>
 		';
 	}

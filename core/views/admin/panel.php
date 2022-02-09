@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<base href="/Xinoro/">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="vendor/assets/Bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="vendor/css/xinoro_admin_panel.css">
 	<title>Панель администратора</title>
 </head>
@@ -122,5 +120,4 @@
 	</div>
 </body>
 </html>
-<script type="text/javascript" src="vendor/assets/Bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript" src="vendor/js/xinoro_admin_panel.js"></script>
