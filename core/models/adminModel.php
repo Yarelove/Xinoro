@@ -56,8 +56,9 @@
     		if(!file_exists("core/views/".$controller."/".$action.".php"))
     			file_put_contents("core/views/".$controller."/".$action.".php", $TemplateView);
 
+    		// Запись в json
     		$routes = json_decode(file_get_contents("config/routes.json"),true);
-    		array_push($routes["routes"],array($url,$controller,$action,$title));
+    		array_push($routes["routes"],array($url,$controller,$action,$title,true));
     		file_put_contents("config/routes.json", json_encode($routes));
 
     		header("location: panel");

@@ -14,16 +14,16 @@
 			<nav>
 				<ul class="nav justify-content-center">
 				  <li class="nav-item">
-				    <a class="nav-link active" aria-current="page" href="#">Обложка</a>
+				    <a class="nav-link nav-link-active" aria-current="page" href="admin/panel">Главная</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">Контент</a>
+				    <a class="nav-link" href="admin/content">Контент</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">База</a>
+				    <a class="nav-link" href="admin/database">База</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">Настройки</a>
+				    <a class="nav-link" href="admin/setting">Настройки</a>
 				  </li>
 				</ul>
 			</nav>
@@ -49,6 +49,7 @@
 							# 	Controller - 1 (string)
 							# 	Action - 2 (string)
 							# 	Title - 3 (string) 
+							#   Hidden Page - 4 (boolean)
 							#
 							# openInEditor() - javascript(local func) - Открытие страницы в редакторе
 							# showInfo() - javascript(local func) - Открытие информации о странице
@@ -59,7 +60,7 @@
 							# Вывод путей на страницы
 							for($i = 0; $i < count($pages['routes']); $i++)
 							{
-								echo '<div class="item" onclick="showInfo('."'".$pages["routes"][$i][3]."'".', '."'".$pages["routes"][$i][0]."'".', '."'".$pages["routes"][$i][1]."'".', '."'".$pages["routes"][$i][2]."'".')" class="page">'.$pages["routes"][$i][3].'</div>';
+								echo '<div class="item" onclick="showInfo('."'".$pages["routes"][$i][3]."'".', '."'".$pages["routes"][$i][0]."'".', '."'".$pages["routes"][$i][1]."'".', '."'".$pages["routes"][$i][2]."'".', '."'".$pages["routes"][$i][4]."'".')" class="page">'.$pages["routes"][$i][3].'</div>';
 							}
 						?>
 					</div>
@@ -70,7 +71,21 @@
 				</div>
 			</div>
 			<div class="col-xxl-6 col-lg-12 d-flex justify-content-xxl-start justify-content-center">
-				<div class="writer-box">
+				<div class="writer-box pt-3 ps-4 pe-4">
+					<form action="admin/panel" method="POST">
+						<p class="mb-4">Информация о странице</p>
+						<p class="mb-0 mt-1">Ссылка</p>
+						<input id="url_info" name="deleteurl" class="inputed_info" type="text" readonly="readonly">
+						<p class="mb-0 mt-1">Контроллер</p>
+						<input id="controller_info" class="inputed_info" type="text" readonly="readonly">
+						<p class="mb-0 mt-1">Действие</p>
+						<input id="action_info" class="inputed_info" type="text" readonly="readonly">
+						<p class="mb-0 mt-1">Заголовок</p>
+						<input id="title_info" class="inputed_info" type="text" readonly="readonly">
+						<p class="mb-0 mt-1">Режим отображения</p>
+						<input id="unvisible_info" class="btn-two btn-first" type="submit" name="pageDeactivation" value="Не активна"><input id="visible_info" class="btn-two btn-last" type="submit" name="pageActivation"value="Активна">
+						<input class="btn-two btn-first-blue" type="submit" name="" value="Редактировать"><input class="btn-two btn-last" type="submit" name="deletePage"value="Удалить">
+					</form>
 				</div>
 			</div>
 		</div>
@@ -107,5 +122,27 @@
 	</div>
 </body>
 </html>
+<script type="text/javascript">
+function showInfo(title, url, controller, action, visible){
+	document.getElementById("title_info").value = title;
+	document.getElementById("url_info").value = url;
+	document.getElementById("controller_info").value = controller;
+	document.getElementById("action_info").value = action;
+
+	if(visible)
+	{
+		if(document.getElementById("unvisible_info").classList.contains("btn-selected"))
+			document.getElementById("unvisible_info").classList.remove("btn-selected")
+		document.getElementById("visible_info").classList.add("btn-selected")
+	}
+	else
+	{
+		if(document.getElementById("visible_info").classList.contains("btn-selected"))
+  			document.getElementById("visible_info").classList.remove("btn-selected")
+  		document.getElementById("unvisible_info").classList.add("btn-selected")
+	}
+
+}
+</script>
 <script type="text/javascript" src="vendor/assets/Bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript" src="vendor/js/xinoro_admin_panel.js"></script>
