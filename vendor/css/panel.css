@@ -183,7 +183,7 @@
 
     .left-wrapper{
         width: 680px;
-        margin-left: 36%;
+        margin-left: 43%;
     }
 
     .left-arrow,.right-arrow{
@@ -278,7 +278,7 @@
 /* Адаптивность */
 @media (max-width: 1440px) {
     .left-wrapper {
-        margin-left: 10%;
+        margin-left: 22%;
     }
 }
 

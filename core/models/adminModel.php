@@ -14,10 +14,12 @@
 			if(empty($url) or empty($controller) or empty($action) or empty($title))
 				return;
 
-			$TemplateController = file_get_contents('https://raw.githubusercontent.com/xoheveras/Xinoro/main/default_config/default_php/TemplateController.php');
-			$TemplateModel = file_get_contents('https://raw.githubusercontent.com/xoheveras/Xinoro/main/default_config/default_php/TemplateModel.php');
-			$TemplateView = file_get_contents('https://raw.githubusercontent.com/xoheveras/Xinoro/main/default_config/default_php/TemplateView.php');
+			// Получение шаблона
+			$TemplateController = file_get_contents('core/core/TemplatePhp/TemplateController.php');
+			$TemplateModel = file_get_contents('core/core/TemplatePhp/TemplateModel.php');
+			$TemplateView = file_get_contents('core/core/TemplatePhp/TemplateView.php');
 
+			// Шаблон действия
 			$TemplateAction = '
 				function '.$action.'Action()
 				{
@@ -27,11 +29,13 @@
 				#input_region#
 			';
 
+			// Подмена шаблона
 			$TemplateController = str_replace('$change$', $controller, $TemplateController);
 			$TemplateController = str_replace('#input_region#',$TemplateAction, $TemplateController);
 			$TemplateModel = str_replace('$change$', $controller, $TemplateModel);
 			$TemplateView = str_replace('$change$', $action, $TemplateView);
 
+			// Создание файлов
 			if(!is_dir("core/views/".$controller)) 
     			mkdir("core/views/".$controller);
 

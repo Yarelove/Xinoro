@@ -25,8 +25,3 @@ function openPageControll()
 {
 	pageControll.hidden = false;
 }
-
-function createPage()
-{
-	window.location.href = 'admin/panel?createpage&u='+inputUrl.value+'&c='+inputController.value+'&a='+inputAction.value;
-}

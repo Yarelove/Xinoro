@@ -104,16 +104,34 @@
 			</div>
         </div>
     </div>
+    <!-- delete -->
+    <br><br><br><br><br>
+	<input id="url__" type="text" placeholder="url">
+	<input id="controller__" type="text" placeholder="controller">
+	<input id="action__" type="text" placeholder="action">
+	<input id="title___" type="text" placeholder="title">
+	<button onclick="createPage();">Создать</button>
+	<!-- ------------- -->
 	<script type="text/javascript">
+
 		// Varables
 		let showInfoBox = document.getElementById("showInfo");
 		let hideInfoBox = document.getElementById("hideInfo");
 		let pageControll = document.getElementById("create-page-controll");
-		let inputUrl = document.getElementById("url");
-		let inputController = document.getElementById("controller");
-		let inputAction = document.getElementById("action");
+		let inputUrl = document.getElementById("url__");
+		let inputController = document.getElementById("controller__");
+		let inputAction = document.getElementById("action__");
+		let inputTitle = document.getElementById("title___");
 		let sliderPageCount = <?php echo $countPage ?>;
 		let sliderSelectPage = 0;
+
+
+		// Create 
+		function createPage()
+		{
+			alert(inputUrl.value);
+			window.location.href = 'admin/panel?createpage&u='+inputUrl.value+'&c='+inputController.value+'&a='+inputAction.value+'&t='+inputTitle.value;
+		}
 		
 		// hidden
 		showInfoBox.hidden = true;
@@ -128,38 +146,6 @@
 			document.getElementById("controller").value = controller;
 			document.getElementById("action").value = action;
 			document.getElementById("title_").value = title;
-		}
-		//window.location.href = 'admin/panel?createpage&u='+inputUrl.value+'&c='+inputController.value+'&a='+inputAction.value;
-		document.getElementById("createPageBtn").onclick = function(){
-			alert("open");
-		}
-
-		// Отслеживание нажатий на кнопки
-		document.getElementById("Slider-left-btn").onclick = function(){ changeSlider(false); }
-		document.getElementById("Slider-right-btn").onclick = function(){ changeSlider(true); }
-
-		// Изменение страниц слайдера
-		function changeSlider(state)
-		{
-			if(!state && sliderSelectPage - 1 >= 0)
-			{
-				document.getElementById("Slider-Page-"+(sliderSelectPage-1)).hidden = false;
-				document.getElementById("Slider-Page-"+sliderSelectPage).hidden = true;
-				sliderSelectPage--;
-			}
-			else if(state && sliderSelectPage + 1 <= sliderPageCount)
-			{
-				document.getElementById("Slider-Page-"+(sliderSelectPage+1)).hidden = false;
-				document.getElementById("Slider-Page-"+sliderSelectPage).hidden = true;
-				sliderSelectPage++;
-			}
-		}
-
-		// Загрузка слайдера
-		window.onload = function() {
-			for (let index = 1; index <= sliderPageCount; index++) {
-				document.getElementById("Slider-Page-"+index).hidden = true;
-			}
 		}
 	</script>
 </body>
