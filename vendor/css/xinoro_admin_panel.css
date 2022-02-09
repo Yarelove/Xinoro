@@ -17,6 +17,15 @@
     outline:none;
 }
 
+.page{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: space-between;
+}
+
 .inputed_info
 {
     width: 100%;

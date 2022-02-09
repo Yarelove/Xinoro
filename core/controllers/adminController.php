@@ -20,10 +20,10 @@
 				$this->model->deletePage($_POST["selected_url"]);
 
 			// Включение/Отключение страницы
-			if(isset($_POST['pageDeactivation']))
+			if(isset($_POST['pageDeactivation']) && isset($_POST["selected_url"]))
 				$this->model->pageHidden($_POST["selected_url"],false);
 
-			if(isset($_POST['pageActivation']))
+			if(isset($_POST['pageActivation']) && isset($_POST["selected_url"]))
 				$this->model->pageHidden($_POST["selected_url"],true);
 
 			$this->view->LoadDesign();
