@@ -13,7 +13,6 @@
 			    <!-- jquery 3.6.0 -->
 			    <script src="vendor/assets/Jquery/jquery-3.6.0.min.js"></script>
 			    <!-- Custom setting -->
-
 			</head>
 		';
 	}
