@@ -1,0 +1,88 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.slide{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 40%;
+    user-select: none;
+    text-align: center;
+}
+.slider{
+    width: 800px;
+    height: 100%;
+}
+
+.slider .slider-controller{  
+    display: flex;
+    height: 100%;
+}
+
+.slider .left-arrow{
+    cursor: pointer;
+    width: 5%;
+    height:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider .image{
+    filter: brightness(60%);
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url(https://placepic.ru/wp-content/uploads/2018/10/starry-sky-night-glitter-stars-river-1200080.jpg);
+    width: 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.slider .right-arrow{
+    cursor: pointer;
+    width: 40px;
+    height: 400px;
+}
+
+.slider .slider-nav{
+    cursor: pointer;
+    text-align: center;
+    margin-top: auto;
+}
+
+.hr{
+    filter: brightness(50%);
+    color: darkgray;
+   text-align: center;
+    justify-items: center;
+    font-size: 40px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.right-arrow img{ 
+    filter: brightness(50%);
+    justify-items: center;
+    width: 40px;
+    height: 80px;
+    margin: 180px 10px 180px 5px;
+       
+}
+.left-arrow img{
+    filter: brightness(50%);
+    justify-items: center;
+    width: 40px;
+    height: 80px;
+    margin: 180px 5px 180px 10px;
+    
+}
+@media only screen and (max-width: 480px) { 
+    img { 
+    width: 100%; 
+    object-fit: cover; 
+    object-position: bottom;
+} 
+}
