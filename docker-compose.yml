@@ -4,9 +4,10 @@ services:
   php-apache:
   	image: #
     	container_name: "Xinoro_PHP_apache"
-	build: #
-	ports:
-      	  - 80:80
+	environment:
+	  build: #
+	  ports:
+      	    - 80:80
   mail-server:
     	image: #
     	container_name: "Xinoro_mailhog"
