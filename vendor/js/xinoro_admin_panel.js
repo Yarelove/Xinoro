@@ -14,7 +14,7 @@ function showInfo(title, url, controller, action, visible){
   document.getElementById("controller_info").value = controller;
   document.getElementById("action_info").value = action;
 
-  if(visible)
+  if(visible > 0)
   {
     if(document.getElementById("unvisible_info").classList.contains("btn-selected"))
       document.getElementById("unvisible_info").classList.remove("btn-selected")

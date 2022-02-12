@@ -26,7 +26,12 @@
 			if(isset($_POST['pageActivation']) && isset($_POST["selected_url"]))
 				$this->model->pageHidden($_POST["selected_url"],true);
 
-			$this->view->LoadDesign();
+			// Список путей
+			$requst = [
+				"items" => $this->model->database->getAllDate("SELECT * FROM routes"),
+			];
+
+			$this->view->LoadDesign($requst);
 		}
 
 		public function contentAction()
@@ -43,20 +48,19 @@
 			}
 			$this->view->LoadDesign();
 		}
-
-		
-		function databaseAction()
-		{
-			$this->view->LoadDesign();
-		}
-
 		
 		function settingAction()
 		{
 			$this->view->LoadDesign();
 		}
+
 		
-		#input_region#	
+		function dbAction()
+		{
+			$this->view->LoadDesign();
+		}
+
+		#input_region#			
 	}
 
 ?> 

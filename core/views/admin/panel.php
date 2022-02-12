@@ -41,24 +41,14 @@
 					</div>
 					<div class="item-box mt-3">
 						<?php
-							# Передача переменных из routes.json 
-							#
-							# 	URL - 0 (string)
-							# 	Controller - 1 (string)
-							# 	Action - 2 (string)
-							# 	Title - 3 (string) 
-							#   Hidden Page - 4 (boolean)
-							#
+							#===========================================================================
 							# openInEditor() - javascript(local func) - Открытие страницы в редакторе
 							# showInfo() - javascript(local func) - Открытие информации о странице
-
-							# Получение списка путей
-							$pages = json_decode(file_get_contents("config/routes.json"),true);
-
+							#===========================================================================
 							# Вывод путей на страницы
-							for($i = 0; $i < count($pages['routes']); $i++)
+							foreach($args["items"] as $value)
 							{
-								echo '<div class="item" onclick="showInfo('."'".$pages["routes"][$i][3]."'".', '."'".$pages["routes"][$i][0]."'".', '."'".$pages["routes"][$i][1]."'".', '."'".$pages["routes"][$i][2]."'".', '."'".$pages["routes"][$i][4]."'".')" class="page">'.$pages["routes"][$i][3].'</div>';
+								echo '<div class="item" onclick="showInfo('."'".$value["title"]."'".', '."'".$value["url"]."'".', '."'".$value["controller"]."'".', '."'".$value["action"]."'".', '."'".$value["visible"]."'".')" class="page">'.$value["title"].'</div>';
 							}
 						?>
 					</div>

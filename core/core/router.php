@@ -7,12 +7,15 @@
 	{
 		protected $routes;
 		protected $settings;
+		protected $mysqlConnect;
+		protected $isredirect;
 		function __construct()
 		{
 			# import routes
 			$this->routes = json_decode(file_get_contents("config/routes.json"),true);
 			$this->settings = json_decode(file_get_contents("config/setting.json"),true);
 			$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+			$this->mysqlConnect = new BaseDate();
 			echo $this->checkPage();
 		}
 
@@ -32,21 +35,21 @@
 		# Проверка на валидность страницы
 		function checkPage()
 		{
-			foreach ($this->routes as $value) {
-				foreach($value as $url)
-				{ 
-					if($url[0] == $this->getPath())
-					{
-						if(!$url[4])
-						{ 
-							echo "Страница была отключена"; 
-							return exit;
-						}
-						$this->runPage($url[1],$url[2]);
-						break;
+			foreach($this->mysqlConnect->getAllDate("SELECT * FROM routes") as $value => $items)
+			{
+				if($items["url"] == $this->getPath())
+				{
+					if(!$items["visible"])
+					{ 
+						echo "Страница была отключена"; 
+						return exit;
 					}
+					$this->runPage($items["controller"],$items['action']);
+					$this->isredirect = true;
+					break;
 				}
 			}
+			if(!$this->isredirect) echo "Такой страницы нет, бан";
 		}	
 
 		# *

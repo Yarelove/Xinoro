@@ -14,6 +14,12 @@
 			if(empty($url) or empty($controller) or empty($action) or empty($title))
 				return;
 
+    		// Запись в db
+    		if($this->database->getdate("SELECT * FROM routes WHERE url = '$url'") == null)
+    			$this->database->updateDate("INSERT INTO routes (id,url,controller,action,title,visible,library) VALUES(NULL,'$url','$controller','$action','$title',true,'')");
+    		else return;
+
+
 			// Получение шаблона
 			$TemplateController = file_get_contents('core/core/TemplatePhp/TemplateController.php');
 			$TemplateModel = file_get_contents('core/core/TemplatePhp/TemplateModel.php');
@@ -56,35 +62,21 @@
     		if(!file_exists("core/views/".$controller."/".$action.".php"))
     			file_put_contents("core/views/".$controller."/".$action.".php", $TemplateView);
 
-    		// Запись в json
-    		$routes = json_decode(file_get_contents("config/routes.json"),true);
-    		array_push($routes["routes"],array($url,$controller,$action,$title,true));
-    		file_put_contents("config/routes.json", json_encode($routes));
 
     		header("location: panel");
 		}
 
-		function saveEditPage($controller, $action, $content)
-		{
-			file_put_contents("core/views/".$controller."/".$action.".php", $content);
-		}
-
 		function deletePage($url)
 		{
-			echo "В разработке 0_0 (Удалять захотев зараза!!!!)";
+			$this->database->updateDate("DELETE FROM routes WHERE url = '$url'");
 		}
 
 		function pageHidden($url,$state)
 		{
-			$json = json_decode(file_get_contents("config/routes.json"),true);
-			foreach($json["routes"] as $key => $value)
-			{
-				if($value[0] == $url)
-				{
-					$json["routes"][$key][4] = $state;
-				}
-			}
-			file_put_contents("config/routes.json", json_encode($json));
+			if($state)
+				$this->database->updateDate("UPDATE routes SET visible = '1' WHERE url LIKE '$url'");
+			else
+				$this->database->updateDate("UPDATE routes SET visible = '0' WHERE url LIKE '$url'");
 		}
 	}
 
