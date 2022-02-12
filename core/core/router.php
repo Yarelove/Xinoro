@@ -5,14 +5,12 @@
 	 */
 	class Router
 	{
-		protected $routes;
 		protected $settings;
 		protected $mysqlConnect;
 		protected $isredirect;
 		function __construct()
 		{
 			# import routes
-			$this->routes = json_decode(file_get_contents("config/routes.json"),true);
 			$this->settings = json_decode(file_get_contents("config/setting.json"),true);
 			$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 			$this->mysqlConnect = new BaseDate();
@@ -44,7 +42,7 @@
 						echo "Страница была отключена"; 
 						return exit;
 					}
-					$this->runPage($items["controller"],$items['action']);
+					$this->runPage($items["controller"],$items['action'],$items["library"]);
 					$this->isredirect = true;
 					break;
 				}
@@ -56,11 +54,11 @@
 		# $controller - запускаемый контроллер
 		# $action - метод в контроллере
 		# *
-		function runPage($controller, $action)
+		function runPage($controller, $action, $library)
 		{
 			$page_controller = $controller."Controller";
 			$page_action = $action."Action";
-			generatePageHeader($this->settings['base_url']);
+			generatePageHeader($this->settings['base_url'],$library);
 			require_once("core/controllers/".$page_controller.".php");
 			$pageController = new $page_controller($controller, $action);
 			$pageController->$page_action();
