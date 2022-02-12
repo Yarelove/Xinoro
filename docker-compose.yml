@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+	php-apache:
+		build: #
+	 	ports:
+      		- 80:80
+	mail-server:
+		build: #
+		ports:
+      		- 25:25
+	python-django:
+		build: #
+		ports:
+      		- 7000:7000
+	phpmyadmin:
+		build: #
+		ports:
+      		- 3307:3307
