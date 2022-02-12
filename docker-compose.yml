@@ -1,19 +1,27 @@
 version: "3"
 
 services:
-	php-apache:
-		build: #
-	 	ports:
-      		- 80:80
-	mail-server:
-		build: #
-		ports:
-      		- 25:25
-	python-django:
-		build: #
-		ports:
-      		- 7000:7000
-	phpmyadmin:
-		build: #
-		ports:
-      		- 3307:3307
+  php-apache:
+  	image: #
+    	container_name: "Xinoro_PHP_apache"
+	build: #
+	ports:
+      	  - 80:80
+  mail-server:
+    	image: #
+    	container_name: "Xinoro_mailhog"
+	build: #
+	ports:
+      	  - 25:25
+  python-django:
+    	image: #
+    	container_name: "Xinoro_python_django"
+	build: #
+	ports:
+      	  - 7000:7000
+  phpmyadmin:
+    	image: #
+    	container_name: "Xinoro_phpmyadmin"
+	build: #
+	ports:
+      	  - 3307:3307
