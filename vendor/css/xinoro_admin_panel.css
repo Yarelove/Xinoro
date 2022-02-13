@@ -176,7 +176,8 @@ form > p
 .writer-box
 {
     width: 80%;
-    height: 58vh;
+    
+    height: 35rem;
     border-radius: 5px;
     box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
 }
@@ -234,7 +235,7 @@ form > p
 {
     background: #5688B7;
     border-radius: 5px;
-    height: 15vh;
+    height: 152px;
     max-height: 154px;
 }
 
