@@ -78,12 +78,6 @@
 			else
 				$this->database->updateDate("UPDATE routes SET visible = '0' WHERE url LIKE '$url'");
 		}
-
-		function changeLibrary($url, $libs)
-		{
-			$this->database->updateDate("UPDATE routes SET library = '$libs' WHERE url LIKE '$url'");
-			header("location: panel");
-		}
 	}
 
 ?> 

@@ -26,10 +26,6 @@
 			if(isset($_POST['pageActivation']) && isset($_POST["selected_url"]))
 				$this->model->pageHidden($_POST["selected_url"],true);
 
-			// Сохранение библиотек
-			if(isset($_GET['lib']))
-				$this->model->changeLibrary($_GET["lib_url"],$_GET["libs_select"]);
-
 			// Список путей
 			$requst = [
 				"items" => $this->model->database->getAllDate("SELECT * FROM routes"),
