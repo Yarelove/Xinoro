@@ -137,7 +137,8 @@
 								<input class="custom-checkbox" type="checkbox" id="xohebb" name="xohebb" value="brown" disabled="disabled">
 								<label for="xohebb">XoheBB</label>
 							</div>
-							<input class="btn btn-primary" id="savelibbtn" type="submit" name="createpage" value="Сохранить">
+							<input class="btn btn-primary" id="openInEditor" style="margin-bottom: 0px; border-bottom-width: 0px;" type="submit" name="createpage" value="Открыть в редакторе">
+							<input class="btn btn-primary" style="margin-top: 5px;" id="savelibbtn" type="submit" name="createpage" value="Сохранить">
 						</div>
 			    	</div>
 			    </div>

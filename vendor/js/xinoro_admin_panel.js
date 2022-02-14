@@ -17,6 +17,9 @@ exampleModal.addEventListener('show.bs.modal', function (event) {
   modalBodyInput.value = recipient
 })
 
+document.getElementById("openInEditor").addEventListener("click", function (event) {
+  window.location.href = "admin/editor?url_edit="+document.getElementById("url_info").value;
+});
 
 document.getElementById("savelibbtn").addEventListener("click", function (event) {
   let libs = "";

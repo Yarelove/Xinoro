@@ -16,7 +16,7 @@
 
     		// Запись в db
     		if($this->database->getdate("SELECT * FROM routes WHERE url = '$url'") == null)
-    			$this->database->updateDate("INSERT INTO routes (id,url,controller,action,title,visible,library) VALUES(NULL,'$url','$controller','$action','$title',true,'')");
+    			$this->database->updateDate("INSERT INTO routes (id,url,controller,action,title,visible,library,stylesheet) VALUES(NULL,'$url','$controller','$action','$title',true,'','$controller"."-"."$action')");
     		else return;
 
 
@@ -26,14 +26,12 @@
 			$TemplateView = file_get_contents('core/core/TemplatePhp/TemplateView.php');
 
 			// Шаблон действия
-			$TemplateAction = '
-				function '.$action.'Action()
-				{
-					$this->view->LoadDesign();
-				}
+			$TemplateAction = 'function '.$action.'Action()
+			{
+				$this->view->LoadDesign();
+			}
 
-				#input_region#
-			';
+			#input_region#';
 
 			// Подмена шаблона
 			$TemplateController = str_replace('$change$', $controller, $TemplateController);
@@ -56,11 +54,17 @@
     			file_put_contents("core/controllers/".$controller."Controller.php", $TemplateController);
     		}
 
+			// Модель страницы
     		if(!file_exists("core/models/".$controller."Model.php"))
     			file_put_contents("core/models/".$controller."Model.php", $TemplateModel);
 
+			// Визуальная сторона
     		if(!file_exists("core/views/".$controller."/".$action.".php"))
     			file_put_contents("core/views/".$controller."/".$action.".php", $TemplateView);
+			
+			// Стили страницы
+			if(!file_exists("vendor/css/".$controller."-".$action.".css"))
+    			file_put_contents("vendor/css/".$controller."-".$action.".css", "");
 
 
     		header("location: panel");
