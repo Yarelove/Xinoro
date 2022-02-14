@@ -1,5 +1,5 @@
 <?php 
-	function generatePageHeader($base_url,$library)
+	function generatePageHeader($base_url,$library,$stylesheet)
 	{
 		$librarys = json_decode(file_get_contents("config/plugins.json"),true);
 
@@ -14,6 +14,8 @@
 			}
 
 		// end base header
-		echo '<!-- Custom setting --></head>';
+		echo '<!-- Custom setting -->
+		<link rel="stylesheet" href="vendor/css/'.$stylesheet.'">
+		</head>';
 	}
 ?>

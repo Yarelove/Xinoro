@@ -46,11 +46,12 @@
 		
 		function editorAction()
 		{
-			if(isset($_POST['savepages']))
-			{
-				$this->model->saveEditPage($_GET["c"],$_GET["a"],$_POST['file']);
-			}
-			$this->view->LoadDesign();
+			// Открытие страницы в редакторе
+			$requst = [
+				"page_content" => file_get_contents("core/views/".$_GET['controller_edit']."/".$_GET['action_edit'].".php")
+			];
+
+			$this->view->LoadDesign($requst);
 		}
 		
 		function settingAction()

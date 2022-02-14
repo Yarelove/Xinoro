@@ -6,17 +6,17 @@
 
  /* Первый блок сайта */
  
- #content_first{
+ .content_first{
      display: flex;
      position: relative;
-   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../image/header-fedya-1/ooo.png); 
+   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/header-0/bg-header-0.png); 
    background-position: center;
    background-size: cover;
    height: 100vh;
    justify-content: center;
    align-items: center;
  }
- #introduction{
+ .introduction{
      display: flex;
      flex-flow: column;
      height: 100%;
@@ -42,7 +42,7 @@
  .third_intro p{
      font-size: 1.7em; 
  }
- #arrow{
+ .arrow{
      display: flex;
    height: 10%;
    align-self: center;
@@ -51,14 +51,14 @@
    /* transform: translate(0px, 50%); */
    animation: down 3s infinite;
  }
- #arrow img{
+ .arrow img{
      height: 50px;
      width: 50px;
  }
  
  /* Второй блок сайта */
  
- #content_second{
+ .content_second{
      display: flex;
      position: relative;
    height: 20%;
@@ -71,16 +71,16 @@
      justify-content: center;
      text-align: start;
  }
- .half_of_second #text_block{
+ .half_of_second .text_block{
    display: flex;
    flex-flow: column;
    width: 80%;
    justify-content: center;
  }
- #text_block p{
+ .text_block p{
      font-size: 1.8em;
  }
- #text_block h1{
+ .text_block h1{
      font-size: 2.6em;
      padding-bottom: 20px;
  }
@@ -91,7 +91,7 @@
  
  /* Третий блок сайта */
  
- #content_third{
+ .content_third{
      display: flex;
      position: relative;
      width: 100%;
@@ -105,16 +105,16 @@
      justify-content: center;
      text-align: start;
  }
- #left_third{
+ .left_third{
      width: 60%;
  }
- #third_images{
+ .third_images{
      position: relative;
      width: 80%;
      height: 80%;
      align-items: center;
  }
- #third_images #one{
+ .third_images .one{
      position: absolute;
      width: 500px;
      height: 650px;
@@ -122,7 +122,7 @@
      margin-top: 200px;
      margin-left: 100px;
  }
- #third_images #two{
+ .third_images .two{
      position: absolute;
      width: 350px;
      height: 400px;
@@ -130,7 +130,7 @@
      margin-left: 635px;
      margin-top: 310px;
  }
- #third_images #three{
+ .third_images .three{
      position: absolute;
      width: 500px;
      height: 300px;
@@ -138,14 +138,14 @@
      margin-top: 740px;
      margin-left: 265px;
  }
- #right_third #text_block{
+ .right_third .text_block{
      display: flex;
      flex-flow: column;
      width: 80%;
      justify-content: center;
      font-size: 1.5em
  }
- #right_third #text_block p{
+ .right_third .text_block p{
      font-size: 1.3em;
      padding-top: 20px;
  }
@@ -166,10 +166,10 @@
      .third_intro p{
          font-size: 1.3em; 
      }
-     #arrow{
+     .arrow{
          transform: translate(0px, 10%);
      }
-     #arrow img{
+     .arrow img{
          height: 40px;
          width: 40px;
      } 
@@ -191,10 +191,10 @@
      .third_intro p{
          font-size: 1.0em; 
      }
-     #arrow{
+     .arrow{
          transform: translate(0px, 5%);
      }
-     #arrow img{
+     .arrow img{
          height: 35px;
          width: 35px;
      } 
@@ -216,10 +216,10 @@
      .third_intro p{
          font-size: 1.3em; 
      }
-     #arrow{
+     .arrow{
          transform: translate(0px, 5%);
      }
-     #arrow img{
+     .arrow img{
          height: 40px;
          width: 40px;
      } 
@@ -241,10 +241,10 @@
      .third_intro p{
          font-size: 1em; 
      }
-     #arrow{
+     .arrow{
          transform: translate(0px, 5%);
      }
-     #arrow img{
+     .arrow img{
          height: 40px;
          width: 40px;
      } 

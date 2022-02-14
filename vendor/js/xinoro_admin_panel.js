@@ -18,7 +18,7 @@ exampleModal.addEventListener('show.bs.modal', function (event) {
 })
 
 document.getElementById("openInEditor").addEventListener("click", function (event) {
-  window.location.href = "admin/editor?url_edit="+document.getElementById("url_info").value;
+  window.location.href = "admin/editor?url_edit="+document.getElementById("url_info").value+"&controller_edit="+document.getElementById("controller_info").value+"&action_edit="+document.getElementById("action_info").value;
 });
 
 document.getElementById("savelibbtn").addEventListener("click", function (event) {

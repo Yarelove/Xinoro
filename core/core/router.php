@@ -42,7 +42,7 @@
 						echo "Страница была отключена"; 
 						return exit;
 					}
-					$this->runPage($items["controller"],$items['action'],$items["library"]);
+					$this->runPage($items["controller"],$items['action'],$items["library"],$items["stylesheet"]);
 					$this->isredirect = true;
 					break;
 				}
@@ -54,11 +54,11 @@
 		# $controller - запускаемый контроллер
 		# $action - метод в контроллере
 		# *
-		function runPage($controller, $action, $library)
+		function runPage($controller, $action, $library, $stylesheet)
 		{
 			$page_controller = $controller."Controller";
 			$page_action = $action."Action";
-			generatePageHeader($this->settings['base_url'],$library);
+			generatePageHeader($this->settings['base_url'],$library, $stylesheet);
 			require_once("core/controllers/".$page_controller.".php");
 			$pageController = new $page_controller($controller, $action);
 			$pageController->$page_action();

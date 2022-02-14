@@ -88,6 +88,12 @@
 			$this->database->updateDate("UPDATE routes SET library = '$libs' WHERE url LIKE '$url'");
 			header("location: panel");
 		}
+
+		function openInEditor($url)
+		{
+			$pageInfo = $this->database->getdate("SELECT * FROM routes WHERE url = '$url'");
+			header("location: editor?editor_page=".$pageInfo["id"]);
+		}
 	}
 
 ?> 
