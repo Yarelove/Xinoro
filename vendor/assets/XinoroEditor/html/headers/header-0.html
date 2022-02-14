@@ -1,5 +1,5 @@
 <div id="xinoro-box header-0" class="content_first">
-    <div class="introduction">
+    <div class="introduction-header-0">
         <div class="inner first_intro" id="xinoro_text_ed" contenteditable="true">
             <p>OUR COMPANY</p>
         </div>
