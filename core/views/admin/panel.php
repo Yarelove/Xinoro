@@ -48,7 +48,7 @@
 							# Вывод путей на страницы
 							foreach($args["items"] as $value)
 							{
-								echo '<div class="item" onclick="showInfo('."'".$value["title"]."'".', '."'".$value["url"]."'".', '."'".$value["controller"]."'".', '."'".$value["action"]."'".', '."'".$value["visible"]."'".')" class="page">'.$value["title"].'</div>';
+								echo '<div class="item" onclick="showInfo('."'".$value["title"]."'".', '."'".$value["url"]."'".', '."'".$value["controller"]."'".', '."'".$value["action"]."'".', '."'".$value["visible"]."'".', '."'".$value["library"]."'".')" class="page">'.$value["title"].'</div>';
 							}
 						?>
 					</div>
@@ -71,9 +71,11 @@
 						<p class="mb-0 mt-1">Заголовок</p>
 						<input id="title_info" class="inputed_info" type="text" readonly="readonly">
 						<p class="mb-0 mt-1">Режим отображения</p>
-						<input id="unvisible_info" class="btn-two btn-first" type="submit" name="pageDeactivation" value="Не активна"><input id="visible_info" class="btn-two btn-last" type="submit" name="pageActivation"value="Активна">
-						<input class="btn-two btn-first-blue" type="submit" name="" value="Редактировать"><input class="btn-two btn-last" type="submit" name="deletePage" value="Удалить">
-					</form>
+						<div class="buttons-list">
+							<input id="unvisible_info" class="btn-two btn-first" type="submit" name="pageDeactivation" value="Не активна"><input id="visible_info" class="btn-two btn-last" type="submit" name="pageActivation"value="Активна">
+							<div data-bs-toggle="modal" data-bs-target="#exampleModal2" class="btn-two btn-first-blue" type="submit" name="" value="Редактировать">Редактировать</div><input class="btn-two btn-last" type="submit" name="deletePage" value="Удалить">
+						</div>
+						</form>
 				</div>
 			</div>
 		</div>
@@ -101,6 +103,42 @@
 				    		<input class="inputed" type="text" name="title" placeholder="Example Test" required>
 					        <input class="btn btn-primary" type="submit" name="createpage" value="Создать">
 			    		</form>
+			    	</div>
+			    </div>
+			</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- Modal-2 -->
+	<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Редактирование страницы</h5>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	        <div class="container-fluid">
+			    <div class="row">
+			    	<div class="col-12">
+						<div class="checkbox-l">
+							<div class="checkbox">
+								<input class="custom-checkbox" type="checkbox" id="bootstrap" name="bootstrap" value="indigo">
+								<label for="bootstrap">Bootstrap 5</label>
+							</div>
+
+							<div class="checkbox">
+								<input class="custom-checkbox" type="checkbox" id="jquery" name="jquery" value="yes">
+								<label for="jquery">Jquery</label>
+							</div>
+
+							<div class="checkbox">
+								<input class="custom-checkbox" type="checkbox" id="xohebb" name="xohebb" value="brown" disabled="disabled">
+								<label for="xohebb">XoheBB</label>
+							</div>
+							<input class="btn btn-primary" id="savelibbtn" type="submit" name="createpage" value="Сохранить">
+						</div>
 			    	</div>
 			    </div>
 			</div>
