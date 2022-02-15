@@ -39,7 +39,7 @@
       </li>
     </ul>
     <div class="design-box pt-4 ps-4">
-      <div onclick="createNewBox();" class="box">
+      <div onclick="createNewBox('1','header');" class="box">
         Test 1
       </div>
     </div>
@@ -47,3 +47,4 @@
   <?php echo $args["page_content"]; ?>
 </body>
 <script type="text/javascript" src="vendor/js/xinoro_admin_editor.js"></script>
+<script type="text/javascript" src="vendor/js/xinoro_editor_js/xinoro_editor_getBlocks.js"></script>

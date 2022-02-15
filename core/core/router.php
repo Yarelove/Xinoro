@@ -42,7 +42,8 @@
 						echo "Страница была отключена"; 
 						return exit;
 					}
-					$this->runPage($items["controller"],$items['action'],$items["library"],$items["stylesheet"]);
+					$isAjax = strstr($items["url"],"ajax") ? true : false;
+					$this->runPage($items["controller"],$items['action'],$items["library"],$items["stylesheet"],$isAjax);
 					$this->isredirect = true;
 					break;
 				}
@@ -54,11 +55,11 @@
 		# $controller - запускаемый контроллер
 		# $action - метод в контроллере
 		# *
-		function runPage($controller, $action, $library, $stylesheet)
+		function runPage($controller, $action, $library, $stylesheet, $isAjax)
 		{
 			$page_controller = $controller."Controller";
 			$page_action = $action."Action";
-			generatePageHeader($this->settings['base_url'],$library, $stylesheet);
+			generatePageHeader($this->settings['base_url'],$library, $stylesheet, $isAjax);
 			require_once("core/controllers/".$page_controller.".php");
 			$pageController = new $page_controller($controller, $action);
 			$pageController->$page_action();

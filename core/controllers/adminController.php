@@ -65,6 +65,11 @@
 			$this->view->LoadDesign();
 		}
 
+		function ajaxAction()
+		{
+			$this->view->LoadDesign();
+		}
+
 		#input_region#			
 	}
 

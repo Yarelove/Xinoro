@@ -6,14 +6,14 @@
 .content_first {
   display: flex;
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/header-0/bg-header-0.png);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/header-1/bg-header-1.png);
   background-position: center;
   background-size: cover;
   height: 100vh;
   justify-content: center;
   align-items: center; }
 
-.introduction-header-0 {
+.introduction-header-1 {
   display: flex;
   flex-flow: column;
   height: 100%;
@@ -22,19 +22,19 @@
   color: white;
   text-align: center;
   justify-content: center; }
-  .introduction-header-0 > .first_intro p {
+  .introduction-header-1 > .first_intro p {
     font-size: 1.2em;
     font-weight: 650; }
-  .introduction-header-0 > .second_intro p {
+  .introduction-header-1 > .second_intro p {
     font-size: 5.6em;
     font-weight: 650;
     padding-top: 100px;
     padding-bottom: 50px; }
-  .introduction-header-0 > .third_intro {
+  .introduction-header-1 > .third_intro {
     margin-bottom: 100px; }
-    .introduction-header-0 > .third_intro p {
+    .introduction-header-1 > .third_intro p {
       font-size: 1.7em; }
-  .introduction-header-0 > .arrow {
+  .introduction-header-1 > .arrow {
     display: flex;
     height: 10%;
     align-self: center;
@@ -42,84 +42,84 @@
     align-items: flex-end;
     /* transform: translate(0px, 50%); */
     animation: down 3s infinite; }
-    .introduction-header-0 > .arrow img {
+    .introduction-header-1 > .arrow img {
       height: 50px;
       width: 50px; }
 
 @media (max-width: 750px) {
-  .introduction-header-0 > .first_intro p {
+  .introduction-header-1 > .first_intro p {
     font-size: 0.8em;
     font-weight: 650; }
-  .introduction-header-0 > .second_intro p {
+  .introduction-header-1 > .second_intro p {
     font-size: 3.6em;
     font-weight: 650;
     padding-top: 100px;
     padding-bottom: 50px; }
-  .introduction-header-0 > .third_intro {
+  .introduction-header-1 > .third_intro {
     margin-bottom: 100px; }
-    .introduction-header-0 > .third_intro p {
+    .introduction-header-1 > .third_intro p {
       font-size: 1.3em; }
-  .introduction-header-0 > .arrow {
+  .introduction-header-1 > .arrow {
     transform: translate(0px, 10%); }
-    .introduction-header-0 > .arrow img {
+    .introduction-header-1 > .arrow img {
       height: 40px;
       width: 40px; } }
 
 @media (max-width: 300px) {
   /*Настройка размеров чисто для Galaxy Fold (раскладушка сенсорная от самсунг) */
-  .introduction-header-0 > .first_intro p {
+  .introduction-header-1 > .first_intro p {
     font-size: 0.6em;
     font-weight: 650; }
-  .introduction-header-0 > .second_intro p {
+  .introduction-header-1 > .second_intro p {
     font-size: 2.5em;
     font-weight: 650;
     padding-top: 100px;
     padding-bottom: 50px; }
-  .introduction-header-0 > .third_intro {
+  .introduction-header-1 > .third_intro {
     margin-bottom: 100px; }
-    .introduction-header-0 > .third_intro p {
+    .introduction-header-1 > .third_intro p {
       font-size: 1.0em; }
-  .introduction-header-0 > .arrow {
+  .introduction-header-1 > .arrow {
     transform: translate(0px, 5%); }
-    .introduction-header-0 > .arrow img {
+    .introduction-header-1 > .arrow img {
       height: 35px;
       width: 35px; } }
 
 @media (max-height: 450px) {
-  .introduction-header-0 > .first_intro p {
+  .introduction-header-1 > .first_intro p {
     font-size: 0.8em;
     font-weight: 650; }
-  .introduction-header-0 > .second_intro p {
+  .introduction-header-1 > .second_intro p {
     font-size: 3.6em;
     font-weight: 650;
     padding-top: 70px;
     padding-bottom: 30px; }
-  .introduction-header-0 > .third_intro {
+  .introduction-header-1 > .third_intro {
     margin-bottom: 70px; }
-    .introduction-header-0 > .third_intro p {
+    .introduction-header-1 > .third_intro p {
       font-size: 1.3em; }
-  .introduction-header-0 > .arrow {
+  .introduction-header-1 > .arrow {
     transform: translate(0px, 5%); }
-    .introduction-header-0 > .arrow img {
+    .introduction-header-1 > .arrow img {
       height: 40px;
       width: 40px; } }
 
 @media (max-height: 750px) and (max-width: 400px) {
-  .introduction-header-0 > .first_intro p {
+  .introduction-header-1 > .first_intro p {
     font-size: 0.7em;
     font-weight: 650; }
-  .introduction-header-0 > .second_intro p {
+  .introduction-header-1 > .second_intro p {
     font-size: 3em;
     font-weight: 650;
     padding-top: 70px;
     padding-bottom: 30px; }
-  .introduction-header-0 > .third_intro {
+  .introduction-header-1 > .third_intro {
     margin-bottom: 70px; }
-    .introduction-header-0 > .third_intro p {
+    .introduction-header-1 > .third_intro p {
       font-size: 1em; }
-  .introduction-header-0 > .arrow {
+  .introduction-header-1 > .arrow {
     transform: translate(0px, 5%); }
-    .introduction-header-0 > .arrow img {
+    .introduction-header-1 > .arrow img {
       height: 40px;
       width: 40px; } }
 
