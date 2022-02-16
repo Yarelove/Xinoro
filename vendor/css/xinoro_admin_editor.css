@@ -11,6 +11,7 @@
 
 .nav-link {
   color: black;
+  cursor: pointer;
 }
 
 .nav-link:hover {
@@ -40,5 +41,29 @@
 .box:hover {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+}
+
+.saveBtn {
+  margin-left: 10px;
+  background: cornflowerblue;
+  border-radius: 5px;
+}
+
+.saveBtn:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.saveBtn > .nav-link:hover{
+  -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.saveBtn > a{
+  color: white;
+}
+
+.saveBtn > a:hover{
+  color: white;
 }
 /*# sourceMappingURL=xinoro_admin_editor.css.map */

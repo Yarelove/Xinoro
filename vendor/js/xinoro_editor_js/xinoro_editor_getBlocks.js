@@ -15,6 +15,12 @@ function createNewBox(idblock,category)
   
       createCssLink(category+"-"+idblock+".css");
       switchImagesUrl();
+
+      // Включаем возможность редактирования текста
+      for(let div of document.querySelectorAll("#xinoro_text_ed"))
+      {
+        div.contentEditable = true;
+      }
       
     }
   });

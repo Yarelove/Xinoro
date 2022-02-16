@@ -37,7 +37,7 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Другое</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item saveBtn">
         <a class="nav-link" onclick="savePage();">Сохранить</a>
       </li>
     </ul>
