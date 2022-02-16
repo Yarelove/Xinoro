@@ -37,6 +37,9 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Другое</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="savePage();">Сохранить</a>
+      </li>
     </ul>
     <div class="design-box pt-4 ps-4">
       <div onclick="createNewBox('1','header');" class="box">
@@ -46,5 +49,6 @@
   </nav>
   <?php echo $args["page_content"]; ?>
 </body>
-<script type="text/javascript" src="vendor/js/xinoro_admin_editor.js"></script>
 <script type="text/javascript" src="vendor/js/xinoro_editor_js/xinoro_editor_getBlocks.js"></script>
+<script type="text/javascript" src="vendor/js/xinoro_editor_js/xinoro_editor_savePage.js"></script>
+<script type="text/javascript" src="vendor/js/xinoro_editor_js/xinoro_editor_loadEditor.js"></script>
