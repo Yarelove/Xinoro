@@ -14,6 +14,7 @@ function createNewBox(idblock,category)
       document.getElementById("xinoro-global-container").innerHTML += result.substr(result.indexOf("<body>", "</body>"));
   
       createCssLink(category+"-"+idblock+".css");
+      switchImagesUrl();
       
     }
   });
