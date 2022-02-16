@@ -1,9 +1,6 @@
 <?php 
-	function generatePageHeader($base_url,$library,$stylesheet,$isAjax)
+	function generatePageHeader($base_url,$library,$stylesheet)
 	{
-		if($isAjax) 
-			return;
-
 		$librarys = json_decode(file_get_contents("config/plugins.json"),true);
 
 		// base header

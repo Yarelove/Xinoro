@@ -9,19 +9,19 @@ function createNewBox(idblock,category)
       blockid: idblock,
       blockcategory: category
     },
-    success: function( result ) {
-      alert(result);
-      document.getElementById("xinoro-global-container").innerHTML += result;
+    success: function(result) {
+      document.getElementById("xinoro-global-container").innerHTML += result.substr(result.indexOf("<body>", "</body>"));
+    
+      // Включаем возможность редактирования текста
+      for(let div of document.querySelectorAll("#xinoro_text_ed"))
+      {
+        div.contentEditable = true;
+      }
+
+      createCssLink(category+"-"+idblock+".css");
+      
     }
   });
-
-  // Включаем возможность редактирования текста
-  for(let div of document.querySelectorAll("#xinoro_text_ed"))
-  {
-    div.contentEditable = true;
-  }
-
-  createCssLink(category+"-"+idblock+".css");
 
 }
 
