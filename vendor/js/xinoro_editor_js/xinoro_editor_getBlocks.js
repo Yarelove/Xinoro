@@ -1,6 +1,6 @@
+// Вытягивание блока в редактор
 function createNewBox(idblock,category)
 {
-
   $.ajax({
     url: "admin/ajax",
     type: "POST",
@@ -11,14 +11,15 @@ function createNewBox(idblock,category)
     },
     success: function(result) {
       document.getElementById("xinoro-global-container").innerHTML += result.substr(result.indexOf("<body>", "</body>"));
-    
+  
+      createCssLink(category+"-"+idblock+".css");
+      switchImagesUrl();
+
       // Включаем возможность редактирования текста
       for(let div of document.querySelectorAll("#xinoro_text_ed"))
       {
         div.contentEditable = true;
       }
-
-      createCssLink(category+"-"+idblock+".css");
       
     }
   });

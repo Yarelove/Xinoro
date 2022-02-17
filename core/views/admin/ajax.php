@@ -1,10 +1,41 @@
 <body>
 <?php 
-	echo file_get_contents("vendor/assets/XinoroEditor/html/header/header-1.html");
-	if(isset($_POST['getBlock']))
+	if(isset($_POST['type']))
 	{
-		echo file_get_contents("./vendor/assets/XinoroEditor/".$_POST["blockcategory"]."/".$_POST["blockcategory"]."-".$_POST["blockid"].".html");
-	}
+		// Получение блоков для редактора
+		if($_POST["type"] == "getBlock")
+			echo file_get_contents("vendor/assets/XinoroEditor/html/".$_POST["blockcategory"]."/".$_POST["blockcategory"]."-".$_POST["blockid"].".html");
+		
+		// Сохранение блоков в страницу
+		if($_POST["type"] == "savePages")
+		{
+			$Csscontent = "";
 
+			// Создание css файла
+			foreach($_POST["saveCssContent"] as $key => $value)
+			{
+				$Csscontent = $Csscontent.file_get_contents("vendor/assets/XinoroEditor/css/".$value.".css");
+			}
+
+			// Сохранение в файлы
+			file_put_contents("core/views/".$_POST["saveController"]."/".$_POST["saveAction"].".php", $_POST["saveHtmlContent"]);
+			file_put_contents("vendor/css/".$_POST["saveController"]."-".$_POST["saveAction"].".css", $Csscontent);
+		}
+
+		// Получение блоков из категорий
+		// if($_POST["type"] == "getBlocksCategory")
+		// {
+		// 	$mysqlconnect = new BaseDate();
+		// 	foreach($mysqlconnect->getAllDate("SELECT * FROM editor_block WHERE category LIKE '".$_POST['category']."'") as $value => $items)
+		// 	{
+		// 		echo '<div onclick="createNewBox('."'".$items["code"]."'".','."'".$items["category"]."'".');" type="'.$items["category"].'" code="'.$items["code"].'" class="box">
+		// 				'.$items["title"].'
+		// 	  		</div>';
+		// 	}
+		// }
+		// debug
+		// echo "</br>";
+		// var_dump($_POST);
+	}
 ?>
 </body>

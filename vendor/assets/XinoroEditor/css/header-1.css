@@ -3,15 +3,25 @@
   outline: none; }
 
 /* Первый блок сайта */
-.content_first {
+.content-first-header_1 {
   display: flex;
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/header-1/bg-header-1.png);
   background-position: center;
   background-size: cover;
+  background-image: url(../assets/XinoroEditor/images/header-1/bg-header-1.png);
+  z-index: -2;
   height: 100vh;
   justify-content: center;
   align-items: center; }
+
+.black-bg-header-1
+{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  width: 100%;
+  position: absolute;
+  height: 100vh;
+  z-index: -1;
+}
 
 .introduction-header-1 {
   display: flex;
