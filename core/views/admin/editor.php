@@ -1,53 +1,53 @@
 <body id="xinoro-global-container">
   <nav>
-    <ul id="nav-btn" class="nav p-2 nav-pills justify-content-center">
+    <ul class="nav p-2 nav-pills justify-content-center">
       <li class="nav-item">
         <a class="nav-link">О проекте</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="nav-btn" type="header">
         <a class="nav-link">Заголовок</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="nav-btn" type="text">
         <a class="nav-link">Текст</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="nav-btn" type="image">
         <a class="nav-link">Картинка</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="nav-btn" type="">
         <a class="nav-link">Приемущества</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="nav-btn" type="">
         <a class="nav-link">Колонки</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="nav-btn" type="">
         <a class="nav-link">Разделитель</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="nav-btn" type="">
         <a class="nav-link">Меню</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="nav-btn" type="">
         <a class="nav-link">Подвал</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="nav-btn" type="">
         <a class="nav-link">Видео</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="nav-btn" type="">
         <a class="nav-link">Форма</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="nav-btn" type="">
         <a class="nav-link" type="other">Другое</a>
       </li>
       <li class="nav-item saveBtn">
         <a class="nav-link" onclick="savePage();">Сохранить</a>
       </li>
     </ul>
-    <div class="design-box pt-4 ps-4">
-      <div onclick="createNewBox('1','header');" class="box">
-        header-1
-      </div>
-      <div onclick="createNewBox('1','text');" class="box">
-        text-1
-      </div>
+    <div id="items-box" class="design-box pt-4 ps-4">
+      <div onclick="createNewBox('1','header');" type="header" code="1" class="box">
+						Заголовок с горами
+			</div>
+      <div onclick="createNewBox('1','text');" type="text" code="1" class="box">
+						Красивый текст с кнопкой
+			</div>
     </div>
   </nav>
   <?php echo $args["page_content"]; ?>

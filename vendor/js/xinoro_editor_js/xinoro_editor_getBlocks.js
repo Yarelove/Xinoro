@@ -1,7 +1,6 @@
 // Вытягивание блока в редактор
 function createNewBox(idblock,category)
 {
-
   $.ajax({
     url: "admin/ajax",
     type: "POST",

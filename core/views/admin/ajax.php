@@ -21,6 +21,18 @@
 			file_put_contents("core/views/".$_POST["saveController"]."/".$_POST["saveAction"].".php", $_POST["saveHtmlContent"]);
 			file_put_contents("vendor/css/".$_POST["saveController"]."-".$_POST["saveAction"].".css", $Csscontent);
 		}
+
+		// Получение блоков из категорий
+		// if($_POST["type"] == "getBlocksCategory")
+		// {
+		// 	$mysqlconnect = new BaseDate();
+		// 	foreach($mysqlconnect->getAllDate("SELECT * FROM editor_block WHERE category LIKE '".$_POST['category']."'") as $value => $items)
+		// 	{
+		// 		echo '<div onclick="createNewBox('."'".$items["code"]."'".','."'".$items["category"]."'".');" type="'.$items["category"].'" code="'.$items["code"].'" class="box">
+		// 				'.$items["title"].'
+		// 	  		</div>';
+		// 	}
+		// }
 		// debug
 		// echo "</br>";
 		// var_dump($_POST);
