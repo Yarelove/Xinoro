@@ -1,0 +1,23 @@
+.content{
+    display: flex;
+}
+
+.block_1{
+    margin-top: 5%;
+    margin-left: 13%;
+    text-align: left;
+    width: 35%;
+    height: 30%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: larger;
+}
+.block_2{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 13%;
+    text-align: left;
+    width: 35%;
+    height: 30%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: larger;
+}

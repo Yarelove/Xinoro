@@ -1,0 +1,21 @@
+.content{
+    display: flex;
+}
+.block_1{
+    margin-top: 5%;
+    margin-left: 25%;
+    width: 55%;
+    height: 20%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: larger;
+    line-height: 1.5;
+}
+.block_2{
+    margin-top: 5%;
+    margin-left: 3%;
+    width: 11%;
+    height: 2%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: smaller;
+    line-height: 1.5;
+}

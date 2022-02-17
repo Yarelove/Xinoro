@@ -1,0 +1,30 @@
+.content{
+    display: flex;
+}
+.block_1{
+    margin-top: 5%;
+    margin-left: 15%;
+    width: 20%;
+    max-height: 35%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: larger;
+    text-align: left;
+}
+.block_2{
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 20%;
+    max-height: 35%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: larger;
+    text-align: left;
+}
+.block_3{
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 20%;
+    max-height: 35%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: larger;
+    text-align: left;
+}
