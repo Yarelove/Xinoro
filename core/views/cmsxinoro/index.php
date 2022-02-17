@@ -25,4 +25,27 @@
             <button id="xinoro_text_ed"><b>Скачать</b><br></button>
         </div>
     </div>
+</div><div index="text-1" class="xinoro-box">
+    <div class="container-text-1">
+        <div class="title" id="xinoro_text_ed"><h1>WE LOVE OLEG</h1></div>
+        <div class="line"></div>
+        <div class="text" id="xinoro_text_ed">Фотоэффе́кт, или фотоэлектри́ческий эффе́кт, — явление взаимодействия света или любого другого электромагнитного излучения с веществом, при кasgasgasgотором энергия фотонов передаётся электронам вещества. В конденсированных веществах выделяют внешний и внутренний фотоэффект.</div>
+        <div class="button">
+            <button id="xinoro_text_ed"><b>learn more</b></button>
+        </div>
+    </div>
+</div><div index="header-2" class="xinoro-box">
+    <div id="xinoro_background" image-path="aGVhZGVyLTIvQkctaGVhZGVyLTIucG5n" class="intro-header-2">
+        <div class="intro__body">
+            <div class="intro__logo">
+                <img src="vendor/assets/XinoroEditor/images/header-2/logo-header-2.png" alt="">
+            </div>
+            <div class="intro__title" id="xinoro_text_ed">xinoro test 2<p>for your app, logo, website</p>
+            </div>
+            <div class="intro__button"><button id="xinoro_text_ed">Далее</button></div>
+            <div class="intro__arrow">
+                <div class="arrow-img"><img src="vendor/assets/XinoroEditor/images/header-2/arrow-down-header-2.png" alt=""></div>
+            </div>
+        </div>
+    </div>
 </div>
